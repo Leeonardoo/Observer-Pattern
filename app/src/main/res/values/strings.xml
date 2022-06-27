@@ -45,4 +45,7 @@
     </string>
     <string name="with_observer">Com observer</string>
     <string name="without_observer">Sem observer</string>
+    <string name="user_name">Nome do Usuário</string>
+    <string name="user_photo_desc">Foto do usuário</string>
+    <string name="post_title_template">Publicação %d</string>
 </resources>

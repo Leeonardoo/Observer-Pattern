@@ -2,7 +2,8 @@ package com.github.leeonardoo.observer.pattern
 
 class Observable<T : Any?> {
 
-    private var value: T? = null
+    var value: T? = null
+        private set
 
     //Lista de Observers inscritos
     private val observers = mutableListOf<Observer<T?>>()
