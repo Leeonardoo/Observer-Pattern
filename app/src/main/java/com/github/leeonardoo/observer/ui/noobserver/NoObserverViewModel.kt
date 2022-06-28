@@ -1,8 +1,11 @@
 package com.github.leeonardoo.observer.ui.noobserver
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.github.leeonardoo.observer.data.demoPosts
 import com.github.leeonardoo.observer.model.Post
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class NoObserverViewModel : ViewModel() {
 
@@ -27,18 +30,26 @@ class NoObserverViewModel : ViewModel() {
     }
 
     fun removePost(post: Post) {
-        _posts.remove(post)
-        postChangeCallback?.onChange(posts)
+        viewModelScope.launch {
+            delay(2000) //Simulando uma ação demorada
+
+            _posts.remove(post)
+            postChangeCallback?.onChange(posts)
+        }
     }
 
     fun addRandomPost() {
-        _posts.add(
-            index = 0,
-            element = Post(
-                id = _posts.size,
-                text = demoPosts.random()
+        viewModelScope.launch {
+            delay(2000) //Simulando uma ação demorada
+
+            _posts.add(
+                index = 0,
+                element = Post(
+                    id = _posts.size,
+                    text = demoPosts.random()
+                )
             )
-        )
-        postChangeCallback?.onChange(posts)
+            postChangeCallback?.onChange(posts)
+        }
     }
 }
