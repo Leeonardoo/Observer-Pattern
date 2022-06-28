@@ -16,7 +16,8 @@ class Observable<T : Any?> {
     }
 
     //Remove um observer (caso existir)
-    fun removeObserver(observer: Observer<T?>) = observers.remove(observer)
+    fun removeObserver(observer: Observer<T?>) =
+        observers.remove(observer)
 
     //Atualiza o valor do Observable e notifica todos os Observers com o novo valor
     fun updateValue(newValue: T?) {
