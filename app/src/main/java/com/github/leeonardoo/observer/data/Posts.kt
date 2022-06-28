@@ -14,6 +14,3 @@ val demoPosts = arrayOf(
     "Donec sed scelerisque metus. Mauris at commodo nunc. Donec a gravida turpis, at suscipit augue. Nam tincidunt, nisl et imperdiet vehicula, lacus magna pellentesque velit, consectetur tempus turpis enim vitae risus.",
     "Mauris imperdiet risus nunc, vel pulvinar quam dictum eu. Duis vitae dui quis tellus venenatis dapibus ac tempus diam. Morbi semper fermentum fringilla. Aliquam eget orci eget dui efficitur mattis. In eget sem mattis, posuere eros sit amet, pharetra orci. Aliquam volutpat tortor sem, id mattis turpis sodales in. Nam dictum est dui, quis varius neque rhoncus vitae."
 )
-
-fun randomPostText() =
-    demoPosts[(0..Int.MAX_VALUE).random().coerceAtMost(demoPosts.size)]

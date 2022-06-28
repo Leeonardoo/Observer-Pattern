@@ -8,7 +8,8 @@ import com.github.leeonardoo.observer.databinding.RowPostBinding
 import com.github.leeonardoo.observer.model.Post
 
 class PostAdapter(
-    private var posts: List<Post>
+    private var posts: List<Post>,
+    private val onClickRemove: (Post) -> Unit
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
     fun updateList(posts: List<Post>) {
@@ -36,10 +37,14 @@ class PostAdapter(
         }
     }
 
-    class ViewHolder(private val binding: RowPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: RowPostBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindView(post: Post) {
             binding.post = post
+
+            binding.deleteButton.setOnClickListener {
+                onClickRemove(post)
+            }
 
             binding.executePendingBindings()
         }

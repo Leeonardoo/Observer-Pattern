@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/user_photo"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
@@ -28,7 +28,8 @@
                 android:contentDescription="@string/user_photo_desc"
                 android:src="@drawable/outline_account_circle_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?colorPrimary" />
 
             <TextView
                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -39,7 +40,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:text="@string/user_name"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/delete_button"
                 app:layout_constraintStart_toEndOf="@id/user_photo"
                 app:layout_constraintTop_toTopOf="@id/user_photo" />
 
@@ -66,6 +67,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title"
                 tools:text="Teste" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete_button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/outline_delete_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

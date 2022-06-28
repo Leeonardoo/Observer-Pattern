@@ -4,14 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/activity_no_observer.xml" value="0.2674772036474164" />
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/activity_noobserver.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/activity_observer.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/content_main.xml" value="0.3109375" />
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/fragment_first.xml" value="0.3109375" />
         <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/fragment_second.xml" value="0.3109375" />
-        <entry key="app/src/main/res/layout/activity_observer.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/row_post.xml" value="0.28780364990234375" />
+        <entry key="..\:/Users/leo_d/AndroidStudioProjects/ObserverPattern/app/src/main/res/layout/row_post.xml" value="0.67" />
       </map>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -1,7 +1,7 @@
 package com.github.leeonardoo.observer.ui.observer
 
 import androidx.lifecycle.ViewModel
-import com.github.leeonardoo.observer.data.randomPostText
+import com.github.leeonardoo.observer.data.demoPosts
 import com.github.leeonardoo.observer.model.Post
 import com.github.leeonardoo.observer.pattern.Observable
 
@@ -10,14 +10,38 @@ class ObserverViewModel : ViewModel() {
     val posts = Observable<List<Post>>()
 
     init {
-        val postsList = mutableListOf<Post>()
+        val randomPosts = mutableListOf<Post>()
         repeat(3) {
-            postsList.add(
+            randomPosts.add(
                 Post(
                     id = it,
-                    text = randomPostText()
+                    text = demoPosts.random()
                 )
             )
         }
+
+        posts.updateValue(randomPosts.sortedByDescending { it.id })
+    }
+
+    fun removePost(post: Post) {
+        posts.updateValue(
+            posts.value?.toMutableList()?.also {
+                it.remove(post)
+            }
+        )
+    }
+
+    fun addRandomPost() {
+        posts.updateValue(
+            posts.value?.toMutableList()?.also {
+                it.add(
+                    index = 0,
+                    element = Post(
+                        id = it.size,
+                        text = demoPosts.random()
+                    )
+                )
+            }
+        )
     }
 }

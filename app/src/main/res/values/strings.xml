@@ -48,4 +48,5 @@
     <string name="user_name">Nome do Usuário</string>
     <string name="user_photo_desc">Foto do usuário</string>
     <string name="post_title_template">Publicação %d</string>
+    <string name="add_post">Adicionar publicação</string>
 </resources>
