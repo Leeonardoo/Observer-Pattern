@@ -2,6 +2,7 @@ package com.github.leeonardoo.observer.pattern
 
 class Observable<T : Any?> {
 
+    //Valor atual do Observable (se houver)
     var value: T? = null
         private set
 

@@ -25,6 +25,7 @@ class ObserverViewModel : ViewModel() {
 
     fun removePost(post: Post) {
         posts.updateValue(
+            //Recria a lista com um post removido
             posts.value?.toMutableList()?.also {
                 it.remove(post)
             }
@@ -33,6 +34,7 @@ class ObserverViewModel : ViewModel() {
 
     fun addRandomPost() {
         posts.updateValue(
+            //Recria a lista com um post adicionado
             posts.value?.toMutableList()?.also {
                 it.add(
                     index = 0,

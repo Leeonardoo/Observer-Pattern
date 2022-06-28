@@ -19,17 +19,24 @@ class NoObserverActivity : AppCompatActivity(R.layout.activity_no_observer) {
         super.onCreate(savedInstanceState)
         setupActionBar()
 
-        val adapter = PostAdapter(this, viewModel.posts) {
-            viewModel.removePost(it)
-        }
-
+        //Cria o adapter inicial e atribui ele ao ListView
+        val adapter = PostAdapter(
+            context = this,
+            posts = viewModel.posts,
+            onClickRemove = { viewModel.removePost(it) }
+        )
         binding.listView.adapter = adapter
+
+        //Adiciona o padding da barra de navegação
         binding.listView.applyNavbarInsets()
 
+        //Quando a lista é atualizada, um novo adapter é criado e atribuído, não há como notificar uma mudança sem observer
         viewModel.postChangeCallback = PostChangeCallback {
-            val newAdapter = PostAdapter(this, viewModel.posts) {
-                viewModel.removePost(it)
-            }
+            val newAdapter = PostAdapter(
+                context = this,
+                posts = it ?: listOf(),
+                onClickRemove = { post -> viewModel.removePost(post) }
+            )
 
             binding.listView.adapter = newAdapter
         }
@@ -40,6 +47,7 @@ class NoObserverActivity : AppCompatActivity(R.layout.activity_no_observer) {
     }
 
     override fun onDestroy() {
+        //Remove o antigo callback antes de destruir a Activity para não haver vazamento de memória
         viewModel.postChangeCallback = null
         super.onDestroy()
     }

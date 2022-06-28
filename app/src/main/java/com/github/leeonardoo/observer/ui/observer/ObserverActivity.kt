@@ -25,10 +25,11 @@ class ObserverActivity : AppCompatActivity(R.layout.activity_observer) {
         super.onCreate(savedInstanceState)
         setupActionBar()
 
-        //Cria o adapter apenas uma vez e atribui ele ao RecyclerView
-        val adapter = PostAdapter(viewModel.posts.value ?: listOf()) {
-            viewModel.removePost(it)
-        }
+        //Cria o adapter e atribui ele ao RecyclerView com os posts atuais
+        val adapter = PostAdapter(
+            posts = viewModel.posts.value ?: listOf(),
+            onClickRemove = { viewModel.removePost(it) }
+        )
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
@@ -36,7 +37,7 @@ class ObserverActivity : AppCompatActivity(R.layout.activity_observer) {
         //Adiciona o padding da barra de navegação
         binding.recyclerView.applyNavbarInsets()
 
-        //Adiciona um novo observer para voltar ao topo quando um novo post é adicionado e o primeiro item visível é o primeiro post
+        //Adiciona um observer para voltar ao topo quando um novo post é adicionado e o primeiro post está visível
         adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
                 super.onItemRangeInserted(positionStart, itemCount)
