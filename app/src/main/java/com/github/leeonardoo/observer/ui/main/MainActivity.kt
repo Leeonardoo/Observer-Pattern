@@ -19,10 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         setSupportActionBar(binding.toolbar)
-        binding.toolbar.title = getString(R.string.app_name)
 
         binding.observerButton.setOnClickListener {
             val intent = Intent(this, ObserverActivity::class.java)

@@ -51,7 +51,5 @@ class NoObserverActivity : AppCompatActivity(R.layout.activity_no_observer) {
         binding.toolbar.setNavigationOnClickListener {
             super.onBackPressed()
         }
-
-        binding.toolbar.title = getString(R.string.app_name)
     }
 }

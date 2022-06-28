@@ -49,4 +49,6 @@
     <string name="user_photo_desc">Foto do usuário</string>
     <string name="post_title_template">Publicação %d</string>
     <string name="add_post">Adicionar publicação</string>
+    <string name="list_without_observers">Lista sem observers</string>
+    <string name="list_with_observers">Lista com observers</string>
 </resources>

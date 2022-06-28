@@ -27,12 +27,15 @@
         <activity
             android:name=".ui.observer.ObserverActivity"
             android:exported="false"
+            android:label="@string/list_with_observers"
             android:theme="@style/Theme.ObserverPattern" />
 
         <activity
             android:name=".ui.noobserver.NoObserverActivity"
             android:exported="false"
+            android:label="@string/list_without_observers"
             android:theme="@style/Theme.ObserverPattern" />
+
     </application>
 
 </manifest>
