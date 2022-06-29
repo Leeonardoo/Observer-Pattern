@@ -25,11 +25,11 @@ class ObserverActivity : AppCompatActivity(R.layout.activity_observer) {
         super.onCreate(savedInstanceState)
         setupActionBar()
 
-        //Cria o adapter e atribui ele ao RecyclerView com os posts atuais
-        val adapter = PostAdapter(
-            posts = viewModel.posts.value ?: listOf(),
-            onClickRemove = { viewModel.removePost(it) }
-        )
+        //Cria o adapter e atribui ele ao RecyclerView
+        val adapter = PostAdapter {
+            viewModel.removePost(it)
+        }
+
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter

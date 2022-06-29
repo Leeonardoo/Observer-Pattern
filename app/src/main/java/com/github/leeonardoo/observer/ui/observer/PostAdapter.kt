@@ -8,9 +8,10 @@ import com.github.leeonardoo.observer.databinding.RowPostBinding
 import com.github.leeonardoo.observer.model.Post
 
 class PostAdapter(
-    private var posts: List<Post>,
     private val onClickRemove: (Post) -> Unit
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+
+    private var posts: List<Post> = listOf()
 
     fun updateList(posts: List<Post>) {
         val diffCallback = PostDiffCallback(this.posts, posts)
